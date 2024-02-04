@@ -1,0 +1,13 @@
+.page-loader {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 0 100%;
+}
+@media (min-width: 768px) {
+  .column {
+    flex: 1;
+  }
+}
