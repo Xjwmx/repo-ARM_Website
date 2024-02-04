@@ -1,14 +1,81 @@
+* styles/style.css */
+
+/* Page Loader */
 .page-loader {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .column {
-  flex: 1 0 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@media(min-width: 768px) {
-  .column {
-    flex: 1;
-  }
+#intro1 {
+  font-size: 24px;
 }
+
+#intro2 {
+  font-weight: bold;
+}
+
+#intro3 {
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#site_header {
+  margin-bottom: 20px;
+}
+
+.nav_links {
+  margin-bottom: 20px;
+}
+
+.nav_link {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.contact_card {
+  margin-bottom: 20px;
+}
+
+.social_links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.social_links img {
+  width: 20px;
+  height: 20px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+
