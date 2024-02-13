@@ -1,22 +1,23 @@
 {
-  "name": "repo-arm_website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass public/scss:styles/css --watch"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "repository": {
-    "type": "git",
-    "url": "REPO-ARM_WEBSITE"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "@astrojs/check": "^0.5.3",
+    "astro": "^4.3.6",
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "sass": "^1.70.0"
+    "sass": "^1.70.0",
+    "stylelint": "^16.2.1",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0"
   }
 }
