@@ -1,7 +1,6 @@
 ---
 //Pulls in the Navigation component -- Recives no props
 import Navigation from "../components/Navigation.astro";
-import MobileNavigationBtn from "../components/MobileNavigationBtn.astro";
 import "../styles/styles.css";
 
 //defines the props that the page will recieve. These populate the meta tags per page.
@@ -20,11 +19,17 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
   </head>
   <body>
     <div class="container__global--padding">
+      <div class="mobile__header-global">
+        <div class="mobile__header-col1">
+          <h1><a href="/">Austin Mueck</a></h1>
+        </div>
+      </div>
+
       <div class="layout__pageContainer">
-        <header class="layout__sidebar-container util__border">
+        <header class="layout__sidebar-container">
           <Navigation />
         </header>
-        <div class="layout__pageContent-container util__border">
+        <div class="layout__pageContent-container">
           <slot />
         </div>
       </div>
@@ -34,7 +39,7 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
       <button class="menu-btn" role="button">MENU</button>
     </div>
 
-    <div class="mobile__menu">
+    <div class="mobile__menu container__global--padding" ">
       <Navigation />
     </div>
   </body>
@@ -56,15 +61,16 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
 
   .mobile__menu--trigger {
     display: none;
+    position: relative;
     z-index: 9999;
   }
 
   .mobile__menu {
+    background-color: var(--color__background);
     display: none;
     position: fixed;
-    height: 100%;
-    width: 0;
-    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
     z-index: 8888;
     top: 0;
     left: 0;

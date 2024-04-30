@@ -4,15 +4,14 @@
 
 
 <div class="navigation__container">
-  <div class="navigation__catagories container__padding--1-top-bottom">
+  <div class="navigation__catagories container__margin--bottom">
     <ul>
-      <li><a href="/">Austin Mueck</a></li>
       <li><a href="/projects" id="btn__projects">Projects</a></li>
       <li><a href="/info" id="btn__information">Information</a></li>
     </ul>
   </div>
-  <div class="navigation__content container__padding--1-top-bottom">
-    <div class="navigation__content--projects">
+  <div class="navigation__content">
+    <div class="navigation__content--projects container__margin--bottom">
       <ul>
         <li><a href="/projects/project-1">Project 1</a></li>
         <li><a href="/projects/project-2">Project 2</a></li>
@@ -20,8 +19,8 @@
         <li><a href="/projects/project-4">Project 4</a></li>
       </ul>
     </div>
-    <div class="navigation__content--information container__padding--1-top-bottom">
-      <ul>
+    <div class="navigation__content--information container__margin--bottom">
+      <ul >
         <li><a href="/info#about">About</a></li>
         <li><a href="/info#contact">Contact</a></li>
         <li><a href="/info#resume">Resume</a></li>
@@ -30,14 +29,8 @@
 </div>
 
 <style lang="css">
-  
-  ul li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    color: var(color__text--primary);
-  }
 
-
+.container__margin--bottom{
+  margin-bottom: 2rem;
+}
 </style>
