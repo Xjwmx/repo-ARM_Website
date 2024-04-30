@@ -1,0 +1,61 @@
+---
+//Pulls in the Navigation component -- Recives no props
+import Navigation from "../components/Navigation.astro";
+
+//defines the props that the page will recieve. These populate the meta tags per page.
+const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html>
+  <head>
+    <title>{title}</title>
+    <meta name="description" content={meta} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:image" content={ogImage} />
+  </head>
+  <body>
+    <div class="layout__pageContainer">
+      <header class="layout__sidebar-container">
+        <Navigation />
+      </header>
+      <div class="layout__pageContent-container">
+        <slot />
+      </div>
+    </div>
+
+    <div class="mobile__menuButton-container">
+      <div class="mobile__menuButton"><p>Menu</p></div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .layout__pageContainer {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    height: 100vh;
+  }
+
+  .layout__pageContent-container {
+    padding: 20px;
+  }
+  .mobile__menuButton-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+import Navigation from "./Navigation.astro";
+---
+
+<div id="navigation-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="navigation__mobile" id="sidebar">
+  <Navigation />
+</div>
+
+<script>
+  function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("active");
+  }
+</script>
+
+<style>
+  #navigation-toggle {
+    cursor: pointer;
+    font-size: 30px;
+    display: none;
+  }
+
+  .navigation__mobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #333;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .navigation__mobile.active {
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    #navigation-toggle {
+      display: block;
+    }
+  }
+</style>

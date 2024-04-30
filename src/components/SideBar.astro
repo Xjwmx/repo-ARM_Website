@@ -1,0 +1,115 @@
+---
+const projects = [
+  "Project 1",
+  "Project 2",
+  "Project 3",
+  "Project 4",
+  "Project 5",
+];
+const links__information = ["About", "Contact", "Resume", "Social"];
+---
+
+<div class="navigation__primary">
+  <ul class="navigation__button-group">
+    <li class="navigation__button-main">
+      <a id="home-button" href="#">Austin Mueck</a>
+    </li>
+    <li class="navigation__button-main">
+      <a id="button__projects" href="#">Projects</a>
+    </li>
+    <li class="navigation__button-main">
+      <a id="button__information" href="#">Information</a>
+    </li>
+  </ul>
+</div>
+
+<div class="navigation__secondary">
+  <div id="links__projects">
+    {
+      projects.map((project) => (
+        <a href={`/projects/${project.replace(" ", "-").toLowerCase()}`}>
+          {project}
+        </a>
+      ))
+    }
+  </div>
+
+  <div id="links__information" style="display: none;">
+    {
+      links__information.map((link) => (
+        <a href={`/${link.toLowerCase()}`}>{link}</a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const button__projects = document.getElementById("button__projects");
+  const button__information = document.getElementById("button__information");
+  const links__projects = document.getElementById("links__projects");
+  const links__information = document.getElementById("links__information");
+
+  button__projects.addEventListener("click", (event) => {
+    event.preventDefault();
+    links__projects.style.display = "block";
+    links__information.style.display = "none";
+  });
+
+  button__information.addEventListener("click", (event) => {
+    event.preventDefault();
+    links__projects.style.display = "none";
+    links__information.style.display = "block";
+  });
+
+  //mobile navigation
+  const navigationMobile = document.querySelector(".navigation__mobile");
+  const navigationToggle = document.getElementById("navigation-toggle"); // Add a toggle button
+
+  // Add event listener to the toggle button (assuming you have one)
+  navigationToggle.addEventListener("click", () => {
+    navigationMobile.classList.toggle("active");
+  });
+</script>
+
+<style>
+  .navigation__primary {
+    display: block;
+  }
+
+  .navigation__primary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .navigation__secondary {
+    display: block;
+  }
+
+  .navigation__secondary a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .navigation__primary {
+      display: none; /* Hide primary navigation on mobile */
+    }
+
+    .navigation__mobile {
+      position: fixed; /* Fix the mobile navigation to the viewport */
+      top: 0; /* Place it at the top */
+      left: -100%; /* Slide it off-screen to the left initially */
+      width: 100%; /* Take full width of the screen */
+      height: 100vh; /* Take full viewport height */
+      background-color: white; /* Set background color */
+      transition: all 0.3s ease-in-out; /* Smooth slide animation */
+      z-index: 99; /* Ensure it's on top of other elements */
+    }
+
+    .navigation__mobile.active {
+      left: 0; /* Slide it in from the left when active */
+    }
+  }
+</style>
