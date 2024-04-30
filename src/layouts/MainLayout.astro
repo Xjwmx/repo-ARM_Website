@@ -1,6 +1,8 @@
 ---
 //Pulls in the Navigation component -- Recives no props
 import Navigation from "../components/Navigation.astro";
+import MobileNavigationBtn from "../components/MobileNavigationBtn.astro";
+import "../styles/styles.css";
 
 //defines the props that the page will recieve. These populate the meta tags per page.
 const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
@@ -17,45 +19,80 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
     <meta property="og:image" content={ogImage} />
   </head>
   <body>
-    <div class="layout__pageContainer">
-      <header class="layout__sidebar-container">
-        <Navigation />
-      </header>
-      <div class="layout__pageContent-container">
-        <slot />
+    <div class="container__global--padding">
+      <div class="layout__pageContainer">
+        <header class="layout__sidebar-container util__border">
+          <Navigation />
+        </header>
+        <div class="layout__pageContent-container util__border">
+          <slot />
+        </div>
       </div>
     </div>
 
-    <div class="mobile__menuButton-container">
-      <div class="mobile__menuButton"><p>Menu</p></div>
+    <div class="mobile__menu--trigger">
+      <button class="menu-btn" role="button">MENU</button>
+    </div>
+
+    <div class="mobile__menu">
+      <Navigation />
     </div>
   </body>
 </html>
 
 <style>
   .layout__pageContainer {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    height: 100vh;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .layout__sidebar-container {
+    flex: 0 0 16rem;
   }
 
   .layout__pageContent-container {
-    padding: 20px;
+    flex: 1 1 auto;
   }
-  .mobile__menuButton-container {
+
+  .mobile__menu--trigger {
+    display: none;
+    z-index: 9999;
+  }
+
+  .mobile__menu {
     display: none;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-    background-color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    height: 100%;
+    width: 0;
+    background-color: aqua;
+    z-index: 8888;
+    top: 0;
+    left: 0;
+  }
 
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  @media screen and (max-width: 1024px) {
+    .layout__sidebar-container {
+      display: none;
+    }
+
+    .mobile__menu--trigger {
+      display: block;
+    }
   }
 </style>
+
+<script is:inline>
+  const mobileMenuTrigger = document.querySelector(".mobile__menu--trigger");
+
+  const mobileMenu = document.querySelector(".mobile__menu");
+
+  mobileMenuTrigger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+
+    if (mobileMenu.classList.contains("active")) {
+      mobileMenu.style.display = "block";
+    } else {
+      mobileMenu.style.display = "none";
+    }
+  });
+</script>
