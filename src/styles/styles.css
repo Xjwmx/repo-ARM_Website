@@ -140,13 +140,12 @@ li {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: #000000;
-  border: 2px solid #1a1a1a;
+  background-color: var(--color__text);
+  border: 2px solid var(--color__text);
   border-radius: 15px;
   box-sizing: border-box;
-  color: #ffffff;
+  color: var(--color__background);
   cursor: pointer;
-  display: inline-block;
   font-size: 16px;
   font-weight: 700;
   margin: 0;
@@ -156,9 +155,14 @@ li {
 
 .menu-btn:active {
   background-color: var(--color__text);
-  border: 2px solid var(--color__background);
+  border-color: var(--color__background);
   color: var(--color__background);
 }
 
 
 
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

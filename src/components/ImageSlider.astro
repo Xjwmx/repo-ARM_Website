@@ -1,0 +1,97 @@
+---
+type image = { src: string; alt: string };
+
+type Props = {
+  images: image[];
+};
+
+const { images }: Props = Astro.props;
+---
+
+<div class="slider__container">
+  <div class="slider__controls">
+    <button class="slider__prev slider__nav" onclick="prevSlide()">Prev</button>
+    <button class="slider__next slider__nav" onclick="nextSlide()">Next</button>
+  </div>
+  <div class="slider__content">
+    {
+      images.map((image) => (
+        <div class="slider__slide">
+          <img src={image.src} alt={image.alt} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<script is:inline>
+  let slides = Array.from(document.querySelectorAll(".slider__content img"));
+  let slideIndex = 0;
+  let intervalID = setInterval(nextSlide, 3000); // Change this to your desired interval
+
+  function showSlide(index) {
+    if (index >= slides.length) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = slides.length - 1;
+    }
+    slides.forEach((slide) => {
+      slide.classList.remove("displaySlide");
+    });
+    slides[slideIndex].classList.add("displaySlide");
+  }
+
+  function nextSlide() {
+    clearInterval(intervalID);
+    slideIndex++;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    clearInterval(intervalID);
+    slideIndex--;
+    showSlide(slideIndex);
+  }
+</script>
+
+<style>
+  .slider__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+    font-size: 0.82rem;
+  }
+
+  .slider__content img {
+    display: none;
+  }
+
+  .slider__content img.displaySlide {
+    display: block;
+  }
+
+  .slider__controls {
+  }
+
+  button.slider__prev,
+  button.slider__next {
+    all: unset;
+    margin-bottom: 0.5rem;
+  }
+
+  button.slider__prev:hover,
+  button.slider__next:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+  }
+
+  button.slider__prev {
+    margin-right: 0.5rem;
+  }
+
+  button.slider__next {
+    margin-left: 0.5rem;
+  }
+</style>

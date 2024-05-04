@@ -1,0 +1,39 @@
+---
+import MainLayout from "./MainLayout.astro";
+import ShowMore from "../components/ShowMore.astro";
+import ImageSlider from "../components/ImageSlider.astro";
+
+type ShowMoreProps = {
+  description: string;
+  date: string;
+  location: string;
+  writer: string;
+  director: string;
+  coDesign: string;
+  addMore: string;
+};
+
+type ImageSliderProps = {
+  images: { src: string; alt: string }[];
+};
+
+type Props = {
+  title: string;
+  showMoreProps: ShowMoreProps;
+  imageSliderProps: ImageSliderProps;
+};
+
+const { title, showMoreProps, imageSliderProps }: Props = Astro.props;
+---
+
+<MainLayout>
+  <h1>{title}</h1>
+  <ShowMore {...showMoreProps} />
+  <ImageSlider {...imageSliderProps} />
+</MainLayout>
+
+<style>
+  h1 {
+    margin: 0;
+  }
+</style>

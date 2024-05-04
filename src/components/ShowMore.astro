@@ -1,0 +1,49 @@
+---
+type Props = {
+  description: string;
+  date: string;
+  location: string;
+  writer: string;
+  director: string;
+  coDesign: string;
+  addMore: string;
+};
+
+const { description, date, location, writer, director, coDesign, addMore } =
+  Astro.props;
+---
+
+<details class="details__container--page">
+  <summary class="summary"><em>Details</em></summary>
+  <ul class="details__content">
+    <li class="details__content--item">{description}</li>
+    <li class="details__content--item">Opened: {date}</li>
+    <li class="details__content--item">{location}</li>
+    <li class="details__content--item">Written By: {writer}</li>
+    <li class="details__content--item">Directed By: {director}</li>
+    <li class="details__content--item">Additional Design by: {coDesign}</li>
+    <li class="details__content--item">{addMore}</li>
+  </ul>
+</details>
+
+<style>
+  .details__container--page {
+    margin: 0.5rem 0 2rem 0;
+    font-size: 0.82em;
+  }
+
+  .summary {
+    cursor: pointer;
+  }
+
+  .details__content {
+    position: absolute;
+    z-index: 222;
+    background: var(--color__background);
+    padding: 4rem 2rem;
+  }
+
+  .details__content--item {
+    margin: 0.25rem 0;
+  }
+</style>

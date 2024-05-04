@@ -1,7 +1,33 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
 ---
 
-<MainLayout>
-  <h1>Project 2</h1>
-</MainLayout>
+<ProjectLayout
+  title="Come From Away"
+  showMoreProps={{
+    date: "October 3rd, 2024",
+    location: "Kendrick Lamar Junior High School Theater, New York, NY",
+    writer: "Tony Kushner",
+    director: "Eugene McMegateux",
+    coDesign:
+      "Kimberly Scott, Photography by Jason Alexander, Mindy Cunningham",
+    addMore:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc",
+  }}
+  imageSliderProps={{
+    images: [
+      {
+        src: "https://picsum.photos/1200/600?random=1",
+        alt: "Image 1",
+      },
+      {
+        src: "https://picsum.photos/1200/600?random=2",
+        alt: "Image 2",
+      },
+      {
+        src: "https://picsum.photos/1200/600?random=3",
+        alt: "Image 3",
+      },
+    ],
+  }}
+/>
