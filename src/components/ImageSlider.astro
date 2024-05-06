@@ -94,4 +94,19 @@ const { images }: Props = Astro.props;
   button.slider__next {
     margin-left: 0.5rem;
   }
+
+  @media only screen and (max-width: 750px) {
+    .slider__container {
+      flex-direction: column-reverse;
+    }
+
+    .slider__controls {
+      margin-top: 0.5rem;
+    }
+
+    .slider__slide > img {
+      aspect-ratio: 3 / 3;
+      object-fit: cover;
+    }
+  }
 </style>

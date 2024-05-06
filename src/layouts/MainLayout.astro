@@ -11,6 +11,8 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
 <html>
   <head>
     <title>{title}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={meta} />
     <meta property="og:title" content={ogTitle} />
     <meta property="og:type" content={ogType} />
