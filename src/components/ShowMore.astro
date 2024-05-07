@@ -5,23 +5,33 @@ type Props = {
   location: string;
   writer: string;
   director: string;
+  techDirector: string;
   coDesign: string;
   addMore: string;
 };
 
-const { description, date, location, writer, director, coDesign, addMore } =
-  Astro.props;
+const {
+  description,
+  date,
+  location,
+  writer,
+  director,
+  techDirector,
+  coDesign,
+  addMore,
+} = Astro.props;
 ---
 
 <details class="details__container--page">
   <summary class="summary"><em>Details</em></summary>
   <ul class="details__content">
     <li class="details__content--item">{description}</li>
-    <li class="details__content--item">Opened: {date}</li>
+    <li class="details__content--item">{date}</li>
     <li class="details__content--item">{location}</li>
-    <li class="details__content--item">Written By: {writer}</li>
-    <li class="details__content--item">Directed By: {director}</li>
-    <li class="details__content--item">Additional Design by: {coDesign}</li>
+    <li class="details__content--item">Writter: {writer}</li>
+    <li class="details__content--item">Director: {director}</li>
+    <li class="details__content--item">Technical Director: {techDirector}</li>
+    <li class="details__content--item">{coDesign}</li>
     <li class="details__content--item">{addMore}</li>
   </ul>
 </details>

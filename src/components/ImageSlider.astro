@@ -66,6 +66,10 @@ const { images }: Props = Astro.props;
 
   .slider__content img {
     display: none;
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   .slider__content img.displaySlide {
@@ -73,6 +77,11 @@ const { images }: Props = Astro.props;
   }
 
   .slider__controls {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-top: 1rem;
   }
 
   button.slider__prev,
