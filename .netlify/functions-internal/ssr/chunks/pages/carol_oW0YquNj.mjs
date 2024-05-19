@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, e as renderComponent, d as createAstro } from '../astro__-VGtwrz.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$ProjectLayout } from './brightroom_BSed_Ngh.mjs';
+import { $ as $$ProjectLayout } from './brightroom_o9q21MLa.mjs';
 
 const $$Astro = createAstro();
 const $$Carol = createComponent(async ($$result, $$props, $$slots) => {
@@ -10,7 +10,7 @@ const $$Carol = createComponent(async ($$result, $$props, $$slots) => {
   return renderTemplate`${renderComponent($$result, "ProjectLayout", $$ProjectLayout, { "title": "A Christmas Carol: The Musical", "showMoreProps": {
     description: "Music By Alan Menken, Lyrics By Lynn Ahrens, Book By Mike Ockrent & Lynn Ahrens",
     date: "November, 2023",
-    location: "This Musical was reformed at Burbank Main Theatre, Santa Rosa Junior College, Santa Rosa, CA",
+    location: "This Musical was performed at Burbank Main Theatre, Santa Rosa Junior College, Santa Rosa, CA",
     writer: "Based on the Charles Dickens' 1843 novella of the same name.",
     director: "Directed by James Newman",
     techDirector: "Technical Direction by Kyle McHarris",

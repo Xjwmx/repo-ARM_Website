@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, e as renderComponent, d as createAstro, m as maybeRenderHead } from '../astro__-VGtwrz.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { a as $$MainLayout } from './brightroom_BSed_Ngh.mjs';
+import { a as $$MainLayout } from './brightroom_o9q21MLa.mjs';
 
 const $$Astro = createAstro();
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {

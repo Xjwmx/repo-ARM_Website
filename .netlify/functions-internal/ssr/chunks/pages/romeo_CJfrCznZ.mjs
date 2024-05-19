@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderTemplate, e as renderComponent, d as createAstro } from '../astro__-VGtwrz.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$ProjectLayout } from './brightroom_BSed_Ngh.mjs';
+import { $ as $$ProjectLayout } from './brightroom_o9q21MLa.mjs';
 
 const $$Astro = createAstro();
 const $$Romeo = createComponent(async ($$result, $$props, $$slots) => {

@@ -74,7 +74,7 @@ const $$Astro = createAstro();
 const $$Brightroom = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Brightroom;
-  return renderTemplate`${renderComponent($$result, "ProjectLayout", $$ProjectLayout, { "title": "A Brightroom Called Day", "showMoreProps": {
+  return renderTemplate`${renderComponent($$result, "ProjectLayout", $$ProjectLayout, { "title": "A Bright Room Called Day", "showMoreProps": {
     description: "",
     date: "April, 2018",
     location: "This play was performed at Thomas Jones Theater, Southwestern University, Georgetown, Tx",
