@@ -56,7 +56,10 @@ body {
 	line-height: 1.5;
 	color: var(--color__text);
 	background-color: var(--color__background);
-  
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+  user-select: none;
 }
 
 @media screen and (max-width: 1024px){

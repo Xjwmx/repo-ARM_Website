@@ -2,7 +2,7 @@
 //Pulls in the Navigation component -- Recives no props
 import Navigation from "../components/Navigation.astro";
 import "../styles/styles.css";
-
+import { ViewTransitions } from "astro:transitions";
 //defines the props that the page will recieve. These populate the meta tags per page.
 const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
 ---
@@ -57,6 +57,10 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
     ></script>
 
     <script is:inline type="text/javascript">
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
+
       options = {
         cursorOuter: "circle",
         hoverEffect: "circle-move",
@@ -67,70 +71,68 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
       };
       magicMouse(options);
     </script>
-  </body>
-</html>
+  </body><style>
+    .mobile__header-col1 {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .layout__pageContainer {
+      display: flex;
+      flex-direction: row;
+    }
 
-<style>
-  .mobile__header-col1 {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-  }
-  .layout__pageContainer {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .layout__sidebar-container {
-    flex: 0 0 16rem;
-  }
-
-  .layout__pageContent-container {
-    flex: 1 1 auto;
-  }
-
-  .mobile__menu--trigger {
-    display: none;
-    position: relative;
-    z-index: 9999;
-  }
-
-  .mobile__menu {
-    background-color: var(--color__background);
-    display: none;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: 8888;
-    top: 0;
-    left: 0;
-  }
-
-  @media screen and (max-width: 1024px) {
     .layout__sidebar-container {
-      display: none;
+      flex: 0 0 16rem;
+    }
+
+    .layout__pageContent-container {
+      flex: 1 1 auto;
     }
 
     .mobile__menu--trigger {
-      display: block;
+      display: none;
+      position: relative;
+      z-index: 9999;
     }
-  }
-</style>
 
-<script is:inline>
-  const mobileMenuTrigger = document.querySelector(".mobile__menu--trigger");
-  const mobileMenu = document.querySelector(".mobile__menu");
-  const menuButton = document.querySelector(".menu-btn"); // Select the button
-
-  mobileMenuTrigger.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
-
-    if (mobileMenu.classList.contains("active")) {
-      mobileMenu.style.display = "block";
-      menuButton.textContent = "Close"; // Change button text to "Close"
-    } else {
-      mobileMenu.style.display = "none";
-      menuButton.textContent = "Menu"; // Change button text to "Menu"
+    .mobile__menu {
+      background-color: var(--color__background);
+      display: none;
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      z-index: 8888;
+      top: 0;
+      left: 0;
     }
-  });
-</script>
+
+    @media screen and (max-width: 1024px) {
+      .layout__sidebar-container {
+        display: none;
+      }
+
+      .mobile__menu--trigger {
+        display: block;
+      }
+    }
+  </style>
+
+  <script is:inline>
+    const mobileMenuTrigger = document.querySelector(".mobile__menu--trigger");
+    const mobileMenu = document.querySelector(".mobile__menu");
+    const menuButton = document.querySelector(".menu-btn"); // Select the button
+
+    mobileMenuTrigger.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+
+      if (mobileMenu.classList.contains("active")) {
+        mobileMenu.style.display = "block";
+        menuButton.textContent = "Close"; // Change button text to "Close"
+      } else {
+        mobileMenu.style.display = "none";
+        menuButton.textContent = "Menu"; // Change button text to "Menu"
+      }
+    });
+  </script>
+</html>
