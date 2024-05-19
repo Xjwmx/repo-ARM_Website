@@ -19,20 +19,24 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --color__text: #030507;
-    --color__background: #f5f8fa;
-    --color__primary: #478abd;
-    --color__secondary: #90bddf;
-    --color__accent: #6babdb;
+    --color__text: hsl(210, 40%, 2%);
+    --color__background: hsl(207, 43%, 92%);
+    --color__background--dark: hsl(205, 22%, 80%);
+    --color__background--lightest: hsl(0, 0%, 94%);
+    --color__primary: hsl(206, 47%, 51%);
+    --color__secondary: hsl(206, 55%, 72%);
+    --color__accent: hsl(206, 61%, 64%);
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color__text: #f8fafc;
-    --color__background: #05080a;
-    --color__primary: #4285b8;
-    --color__secondary: #204d6f;
-    --color__accent: #246394;
+    --color__text: hsl(210, 40%, 98%);
+    --color__background: hsl(270, 10%, 12%);
+    --color__background--dark: hsl(0, 0%, 0%);
+    --color__background--lightest: hsl(263, 15%, 20%);
+    --color__primary: rgb(115, 66, 184);
+    --color__secondary: hsl(264, 55%, 28%);
+    --color__accent: hsl(271, 61%, 36%);
   }
 }
 
@@ -67,9 +71,12 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 1rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 1.2;
-  margin-bottom: 2rem;
+	line-height: 1.125;
 }
+h1 {
+  font-size: 1.33rem;
+}
+
 
 p {
   font-family: 'montserrat', sans-serif;
@@ -124,30 +131,55 @@ li {
 
 
 /* menu Button */
+/*button.slider__prev,
+button.slider__next {
+  margin: 1rem 1rem;
+  color: var(--color__text);
+  padding: 0.7em 1.7em;
+  border-radius: 0.5em;
+  background: var(--color__background);
+  /* cursor: pointer; */
+  /* border: 1px solid;
+  border-color: var(--color__background);
+  transition: all 100ms;
+  box-shadow:
+    6px 6px 12px var(--color__background--dark),
+    -6px -6px 12px var(--color__background--lightest);
+}
 
+button.slider__prev:hover,
+button.slider__next:hover {
+  border: 1px solid var(--color__background--dark);
+}
+button.slider__prev:active,
+button.slider__next:active {
+  box-shadow:
+    4px 4px 12px var(--color__accent),
+    -4px -4px 12px var(--color__secondary); --> */ 
 
 .menu-btn {
   display: block;
   position: fixed;
-  bottom: 1rem;
+  top: 1rem;
   right: 1rem;
-  background-color: var(--color__text);
-  border: 2px solid var(--color__text);
-  border-radius: 15px;
-  box-sizing: border-box;
-  color: var(--color__background);
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0;
-  padding: 0.75rem;
-  /* transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1); */
+  margin: 1rem 1rem;
+  color: var(--color__text);
+  padding: 0.7em 1.7em;
+  border-radius: 0.5em;
+  background: var(--color__background);
+  /* cursor: pointer; */
+  border: 1px solid;
+  border-color: var(--color__background);
+  transition: all 100ms;
+  box-shadow:
+    6px 6px 12px var(--color__background--dark),
+    -6px -6px 12px var(--color__background--lightest);
 }
 
 .menu-btn:active {
-  background-color: var(--color__text);
-  border-color: var(--color__background);
-  color: var(--color__background);
+  box-shadow:
+    4px 4px 12px var(--color__accent),
+    -4px -4px 12px var(--color__secondary);
 }
 
 

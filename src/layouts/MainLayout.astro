@@ -23,7 +23,12 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
     <div class="container__global--padding">
       <div class="mobile__header-global">
         <div class="mobile__header-col1">
-          <h1><a href="/">Austin R. Mueck</a></h1>
+          <h1>
+            <a class="magic-hover magic-hover__square" href="/"
+              >Austin R. Mueck</a
+            >
+          </h1>
+          <em>Scenic Designer</em>
         </div>
       </div>
 
@@ -44,10 +49,33 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
     <div class="mobile__menu container__global--padding">
       <Navigation />
     </div>
+
+    <script
+      is:inline
+      type="text/javascript"
+      src="https://res.cloudinary.com/veseylab/raw/upload/v1684982764/magicmouse-2.0.0.cdn.min.js"
+    ></script>
+
+    <script is:inline type="text/javascript">
+      options = {
+        cursorOuter: "circle",
+        hoverEffect: "circle-move",
+        hoverItemMove: false,
+        defaultCursor: false,
+        outerWidth: 30,
+        outerHeight: 30,
+      };
+      magicMouse(options);
+    </script>
   </body>
 </html>
 
 <style>
+  .mobile__header-col1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
   .layout__pageContainer {
     display: flex;
     flex-direction: row;
@@ -91,17 +119,18 @@ const { title, meta, ogTitle, ogType, ogUrl, ogImage } = Astro.props;
 
 <script is:inline>
   const mobileMenuTrigger = document.querySelector(".mobile__menu--trigger");
-
   const mobileMenu = document.querySelector(".mobile__menu");
+  const menuButton = document.querySelector(".menu-btn"); // Select the button
 
   mobileMenuTrigger.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
 
     if (mobileMenu.classList.contains("active")) {
       mobileMenu.style.display = "block";
+      menuButton.textContent = "Close"; // Change button text to "Close"
     } else {
       mobileMenu.style.display = "none";
+      menuButton.textContent = "Menu"; // Change button text to "Menu"
     }
-    S;
   });
 </script>

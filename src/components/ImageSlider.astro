@@ -10,8 +10,14 @@ const { images }: Props = Astro.props;
 
 <div class="slider__container">
   <div class="slider__controls">
-    <button class="slider__prev slider__nav" onclick="prevSlide()">Prev</button>
-    <button class="slider__next slider__nav" onclick="nextSlide()">Next</button>
+    <button
+      class="slider__prev slider__nav magic-hover magic-hover__square"
+      onclick="prevSlide()">Prev</button
+    >
+    <button
+      class="slider__next slider__nav magic-hover magic-hover__square"
+      onclick="nextSlide()">Next</button
+    >
   </div>
   <div class="slider__content">
     {
@@ -62,11 +68,12 @@ const { images }: Props = Astro.props;
     align-items: flex-start;
     overflow: hidden;
     font-size: 0.82rem;
+    max-width: 1080px;
   }
 
   .slider__content img {
     display: none;
-    width: 90%;
+    width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -77,23 +84,39 @@ const { images }: Props = Astro.props;
   }
 
   .slider__controls {
+    width: 100%;
     display: flex;
-    width: 90%;
     justify-content: space-between;
+    flex-direction: row;
     gap: 0.5rem;
     margin-top: 1rem;
   }
 
   button.slider__prev,
   button.slider__next {
-    all: unset;
-    margin-bottom: 0.5rem;
+    margin: 1rem 1rem;
+    color: var(--color__text);
+    padding: 0.7em 1.7em;
+    border-radius: 0.5em;
+    background: var(--color__background);
+    /* cursor: pointer; */
+    border: 1px solid;
+    border-color: var(--color__background);
+    transition: all 100ms;
+    box-shadow:
+      6px 6px 12px var(--color__background--dark),
+      -6px -6px 12px var(--color__background--lightest);
   }
 
   button.slider__prev:hover,
   button.slider__next:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
+    border: 1px solid var(--color__background--dark);
+  }
+  button.slider__prev:active,
+  button.slider__next:active {
+    box-shadow:
+      4px 4px 12px var(--color__accent),
+      -4px -4px 12px var(--color__secondary);
   }
 
   button.slider__prev {
