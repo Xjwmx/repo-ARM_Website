@@ -27,7 +27,7 @@ const { images }: Props = Astro.props;
 <script is:inline>
   let slides = Array.from(document.querySelectorAll(".slider__content img"));
   let slideIndex = 0;
-  let intervalID = setInterval(nextSlide, 3000); // Change this to your desired interval
+  let intervalID = setInterval(nextSlide, 10); // Change this to your desired interval
 
   function showSlide(index) {
     if (index >= slides.length) {

@@ -24,22 +24,24 @@ const {
 
 <details class="details__container--page">
   <summary class="summary"><em>Details</em></summary>
-  <ul class="details__content">
-    <li class="details__content--item">{description}</li>
-    <li class="details__content--item">{date}</li>
-    <li class="details__content--item">{location}</li>
-    <li class="details__content--item">Writter: {writer}</li>
-    <li class="details__content--item">Director: {director}</li>
-    <li class="details__content--item">Technical Director: {techDirector}</li>
-    <li class="details__content--item">{coDesign}</li>
-    <li class="details__content--item">{addMore}</li>
-  </ul>
+  <div class="details__content">
+    <p class="details__content--item">{writer}</p>
+    <p class="details__content--item">{director}</p>
+    <p class="details__content--item">{date}</p>
+    <p class="details__content--item">{description}</p>
+    <p class="details__content--item">{location}</p>
+
+    <p class="details__content--item">{techDirector}</p>
+    <p class="details__content--item">{coDesign}</p>
+    <p class="details__content--item">{addMore}</p>
+  </div>
 </details>
 
 <style>
   .details__container--page {
     margin: 0.5rem 0 2rem 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
+    max-width: 12rem;
   }
 
   .summary {
@@ -48,12 +50,15 @@ const {
 
   .details__content {
     position: absolute;
+    max-width: 24rem;
     z-index: 222;
     background: var(--color__background);
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
+    border: 1px solid var(--color__text);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
   }
 
-  .details__content--item {
-    margin: 0.25rem 0;
+  p.details__content--item {
+    margin-bottom: 1rem;
   }
 </style>
