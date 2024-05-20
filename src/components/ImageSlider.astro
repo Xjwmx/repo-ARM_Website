@@ -10,13 +10,11 @@ const { images }: Props = Astro.props;
 
 <div class="slider__container">
   <div class="slider__controls">
-    <button
-      class="slider__prev slider__nav magic-hover magic-hover__square"
-      onclick="prevSlide()">Prev</button
+    <button class="button-55 slider__prev slider__nav" onclick="prevSlide()"
+      >Prev</button
     >
-    <button
-      class="slider__next slider__nav magic-hover magic-hover__square"
-      onclick="nextSlide()">Next</button
+    <button class="button-55 slider__next slider__nav" onclick="nextSlide()"
+      >Next</button
     >
   </div>
   <div class="slider__content">
@@ -94,29 +92,30 @@ const { images }: Props = Astro.props;
 
   button.slider__prev,
   button.slider__next {
-    margin: 1rem 1rem;
-    color: var(--color__text);
+    /* margin: 1rem 1rem; */
+    /* color: var(--color__text);
     padding: 0.7em 1.7em;
     border-radius: 0.5em;
-    background: var(--color__background);
+    background: var(--color__background); */
     /* cursor: pointer; */
-    border: 1px solid;
+    /* border: 1px solid;
     border-color: var(--color__background);
     transition: all 100ms;
     box-shadow:
       6px 6px 12px var(--color__background--dark),
-      -6px -6px 12px var(--color__background--lightest);
+      -6px -6px 12px var(--color__background--lightest); */
   }
 
   button.slider__prev:hover,
   button.slider__next:hover {
-    border: 1px solid var(--color__background--dark);
+    /* border: 1px solid var(--color__background--dark); */
   }
+
   button.slider__prev:active,
   button.slider__next:active {
-    box-shadow:
+    /* box-shadow:
       4px 4px 12px var(--color__accent),
-      -4px -4px 12px var(--color__secondary);
+      -4px -4px 12px var(--color__secondary); */
   }
 
   button.slider__prev {

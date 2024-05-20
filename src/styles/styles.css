@@ -73,11 +73,36 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'montserrat', sans-serif;
 	font-size: 1rem;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 1.125;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
 }
+
 h1 {
-  font-size: 1.33rem;
+  font-size: 1.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: .875rem;
+}
+
+h6 {
+  font-size: .75rem;
 }
 
 
@@ -133,57 +158,6 @@ li {
 }
 
 
-/* menu Button */
-/*button.slider__prev,
-button.slider__next {
-  margin: 1rem 1rem;
-  color: var(--color__text);
-  padding: 0.7em 1.7em;
-  border-radius: 0.5em;
-  background: var(--color__background);
-  /* cursor: pointer; */
-  /* border: 1px solid;
-  border-color: var(--color__background);
-  transition: all 100ms;
-  box-shadow:
-    6px 6px 12px var(--color__background--dark),
-    -6px -6px 12px var(--color__background--lightest);
-}
-
-button.slider__prev:hover,
-button.slider__next:hover {
-  border: 1px solid var(--color__background--dark);
-}
-button.slider__prev:active,
-button.slider__next:active {
-  box-shadow:
-    4px 4px 12px var(--color__accent),
-    -4px -4px 12px var(--color__secondary); --> */ 
-
-.menu-btn {
-  display: block;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  margin: 1rem 1rem;
-  color: var(--color__text);
-  padding: 0.7em 1.7em;
-  border-radius: 0.5em;
-  background: var(--color__background);
-  /* cursor: pointer; */
-  border: 1px solid;
-  border-color: var(--color__background);
-  transition: all 100ms;
-  box-shadow:
-    6px 6px 12px var(--color__background--dark),
-    -6px -6px 12px var(--color__background--lightest);
-}
-
-.menu-btn:active {
-  box-shadow:
-    4px 4px 12px var(--color__accent),
-    -4px -4px 12px var(--color__secondary);
-}
 
 
 
@@ -191,4 +165,57 @@ img {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+}
+
+
+.btn-menu{
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 999;
+
+}
+
+
+
+.button-55 {
+  margin: 1rem;
+  align-self: center;
+  background-color: var(--color__background);
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--color__text);
+  box-shadow: var(--color__background--lightest) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: var(--color__text);
+  /* cursor: pointer; */
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .25rem 1.25rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: var(--color__secondary) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: var(--color__primary) 2px 8px 4px -6px;
 }
