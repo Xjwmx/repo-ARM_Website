@@ -10,12 +10,8 @@ const { images }: Props = Astro.props;
 
 <div class="slider__container">
   <div class="slider__controls">
-    <button class="button-55 slider__prev slider__nav" onclick="prevSlide()"
-      >Prev</button
-    >
-    <button class="button-55 slider__next slider__nav" onclick="nextSlide()"
-      >Next</button
-    >
+    <a class="button-55" onclick="prevSlide()">Prev</a>
+    <a class="button-55" onclick="nextSlide()">Next</a>
   </div>
   <div class="slider__content">
     {
@@ -59,6 +55,11 @@ const { images }: Props = Astro.props;
 </script>
 
 <style>
+  .slider__slide img {
+    width: 1080px;
+    height: 100%;
+    object-fit: cover;
+  }
   .slider__container {
     position: relative;
     display: flex;
@@ -66,13 +67,13 @@ const { images }: Props = Astro.props;
     align-items: flex-start;
     overflow: hidden;
     font-size: 0.82rem;
-    max-width: 1080px;
+    max-width: 1000px;
   }
 
   .slider__content img {
     display: none;
     width: 100%;
-    height: auto;
+    height: 100%s;
     aspect-ratio: 16 / 9;
     object-fit: cover;
   }
@@ -90,39 +91,11 @@ const { images }: Props = Astro.props;
     margin-top: 1rem;
   }
 
-  button.slider__prev,
-  button.slider__next {
-    /* margin: 1rem 1rem; */
-    /* color: var(--color__text);
-    padding: 0.7em 1.7em;
-    border-radius: 0.5em;
-    background: var(--color__background); */
-    /* cursor: pointer; */
-    /* border: 1px solid;
-    border-color: var(--color__background);
-    transition: all 100ms;
-    box-shadow:
-      6px 6px 12px var(--color__background--dark),
-      -6px -6px 12px var(--color__background--lightest); */
-  }
-
-  button.slider__prev:hover,
-  button.slider__next:hover {
-    /* border: 1px solid var(--color__background--dark); */
-  }
-
-  button.slider__prev:active,
-  button.slider__next:active {
-    /* box-shadow:
-      4px 4px 12px var(--color__accent),
-      -4px -4px 12px var(--color__secondary); */
-  }
-
-  button.slider__prev {
+  a.slider__prev {
     margin-right: 0.5rem;
   }
 
-  button.slider__next {
+  a.slider__next {
     margin-left: 0.5rem;
   }
 
