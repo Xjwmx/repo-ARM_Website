@@ -15,7 +15,7 @@ const $$Romeo = createComponent(async ($$result, $$props, $$slots) => {
     director: "Directed by Anne McAlexander",
     techDirector: "Technical Direction by Dustin Witte",
     coDesign: "Light Design by Bentley Heydt, Costume Design by Elizabeth Ennis, Hair & Makeup by Inna Gomez",
-    addMore: "The script was addapted by Anne McAlexander for this production. The show was set in the 1920s and featured a live jazz band."
+    addMore: "The script was addapted by Anne McAlexander for this production."
   }, "imageSliderProps": {
     images: [
       {

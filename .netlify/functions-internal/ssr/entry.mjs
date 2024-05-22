@@ -1,5 +1,5 @@
 import { renderers } from './renderers.mjs';
-import { manifest } from './manifest_DeVKSAcq.mjs';
+import { manifest } from './manifest_DPzyd-NT.mjs';
 import * as serverEntrypointModule from '@astrojs/netlify/ssr-function.js';
 import { onRequest } from './_noop-middleware.mjs';
 
@@ -10,7 +10,7 @@ const _page3 = () => import('./chunks/carol_GQmhxi3R.mjs');
 const _page4 = () => import('./chunks/charlie_BtZXnp_9.mjs');
 const _page5 = () => import('./chunks/clue_Dlp5U9qP.mjs');
 const _page6 = () => import('./chunks/revolutionist_kPB9LMt3.mjs');
-const _page7 = () => import('./chunks/romeo_Cr-zr0Mn.mjs');
+const _page7 = () => import('./chunks/romeo_BYNnGBo1.mjs');
 const _page8 = () => import('./chunks/index_CtNNsCwq.mjs');
 const pageMap = new Map([
     ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
@@ -30,7 +30,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "d1e23543-be4b-4fad-8999-3af70ba7430a"
+    "middlewareSecret": "abc8f3a4-aa71-49a4-96f3-f561bcf85448"
 };
 const _exports = serverEntrypointModule.createExports(_manifest, _args);
 const __astrojsSsrVirtualEntry = _exports.default;
